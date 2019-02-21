@@ -2,7 +2,7 @@
 
 Freenove Micro:Rover Extension for Makecode.
 
-<img src='icon.png' width='100%'/>
+<img src='icon.png' width='30%'/>
 
 ## License
 
