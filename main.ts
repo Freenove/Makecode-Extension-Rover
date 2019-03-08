@@ -414,17 +414,14 @@ namespace Rover {
     export function MotorRun(index: Motors, speed: number): void {
         speed = Math.map(speed, -255, 255, -4095, 4095);
         speed = Math.constrain(speed, -4095, 4095);
-        let pp = (index - 1) * 2
-        let pn = (index - 1) * 2 + 1
-        if (index == Motors.M2) {
-            speed = -speed
-        }
+        let pp = (index - 1) * 2;
+        let pn = (index - 1) * 2 + 1;
         if (speed >= 0) {
-            setPwm(pp, 0, speed)
-            setPwm(pn, 0, 0)
+            setPwm(pp, 0, 0);
+            setPwm(pn, 0, speed);
         } else {
-            setPwm(pp, 0, 0)
-            setPwm(pn, 0, -speed)
+            setPwm(pp, 0, -speed);
+            setPwm(pn, 0, 0);
         }
     }
     /**
