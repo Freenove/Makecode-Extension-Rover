@@ -1,8 +1,12 @@
-# Rover
+# Makecode-Extension-Rover
 
 Freenove Micro:Rover Extension for Makecode.
 
 <img src='icon.png' width='30%'/>
+
+# Micro:Rover
+You can find all the information about it here.<br>
+https://github.com/Freenove/Freenove_Micro_Rover/
 
 ## API
 ### LEDs
