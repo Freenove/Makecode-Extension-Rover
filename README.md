@@ -5,8 +5,17 @@ Freenove Micro:Rover Extension for Makecode.
 <img src='icon.png' width='30%'/>
 
 # Micro:Rover
-You can find all the information about it here.<br>
-https://github.com/Freenove/Freenove_Micro_Rover/
+* You can buy the Freenove Micro:Rover from here.<br>
+    * United States: https://www.amazon.com/dp/B07QV5VS5W
+    * United Kingdom: https://www.amazon.co.uk/dp/B07QV5VS5W
+    * Germany: https://www.amazon.de/dp/B07QV5VS5W
+    * France: https://www.amazon.fr/dp/B07QV5VS5W
+    * Italy: https://www.amazon.it/dp/B07QV5VS5W
+    * Spain: https://www.amazon.es/dp/B07QV5VS5W
+* You can find all the information about it here.<br>
+    * https://github.com/Freenove/Freenove_Micro_Rover/
+* You can see its demo video here.
+    * https://youtu.be/H7P5lZo29lA
 
 ## API
 ### LEDs
