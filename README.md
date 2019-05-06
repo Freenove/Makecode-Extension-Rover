@@ -17,8 +17,8 @@ Freenove Micro:Rover Extension for Makecode.
 * You can see its demo video here.
     * https://youtu.be/H7P5lZo29lA
 
-## Usage
-### LEDs
+# Usage
+## LEDs
 Function | Description
 --- | ---
 Rover.setBrightness(255) | Set the brightness of all RGB LEDs on the Rover.
@@ -30,7 +30,7 @@ Rover.ledIndex(LEDIndex.LED1) | RGB LED combination selection list.
 Rover.colors(RoverColors.Red) | Common color list provides 10 kinds of colors
 Rover.rgb(128, 128, 128) | The RGB color picking model returns the RGB color value.
 
-### Motors
+## Motors
 Function | Description
 --- | ---
 Rover.Move(50) | Set the two motors at the same speed to makes the Rover move forward or backward. <br>The positive value is for forward and the negative value is for backward.
@@ -39,7 +39,7 @@ Rover.MotorRun(Rover.Motors.M1, 50) | Set the speed of only one motor (M1 or M2)
 Rover.MotorStopAll(MotorActions.Stop) | Make two motors stop or brake at the same time.
 Rover.MotorStop(MotorActions.Stop, Rover.Motors.M1) | Make only one motor (M1 or M2) stop or brake.
 
-### Sensors
+## Sensors
 Function | Description
 --- | ---
 Rover.Ultrasonic() | Start the ultrasonic ranging module and return the measured distance. <br>This block is a time-consuming block. If you use this block multiple times in a short time, <br>you need use a variable to save the returned distance value.
@@ -47,7 +47,7 @@ Rover.LineTracking() | Returns the value of the line-tracking Sensor.
 Rover.LightTracing() | Returns the value of the light-tracing Sensor.
 Rover.BatteryLevel() | Returns the battery voltage value.
 
-### Commands
+## Commands
 Function | Description
 --- | ---
 Rover.setReceiveString("") |  Set CMD as a string and parse it into CMD'order' and CMD'parameters'. And store them in 'Rover.getOrder()' and 'Rover.parametersList()' accordingly.
@@ -62,7 +62,7 @@ Rover.checkMode(RoverModes.Mode_None) | bool. Judge if the Rover mode variable i
 Rover.order_export(Orders.MOVE) | Command/action list.
 Rover.rover_mode_export(RoverModes.Mode_None) | Rover mode list.
 
-### Examples:
+# Examples:
 
 The file test.ts, which uses most of the blocks in this extension and contains almost all the functions that Micro: Rover has. 
 <br>Here are some simple examples.
@@ -106,11 +106,11 @@ basic.forever(function () {
     basic.pause(1000)
 })
 ```
-## License
+### License
 
 MIT
 
-## Supported targets
+### Supported targets
 
 * for PXT/microbit
 
