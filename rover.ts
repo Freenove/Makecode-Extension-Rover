@@ -82,7 +82,7 @@ enum MotorActions {
 /**
  * Rover: blocks 
  */
-//% color="#FF0000" weight=10 icon="\uf1b9"
+//% color="#ff6800" weight=10 icon="\uf1b9"
 //% groups="['LEDs','Motors','Sensors','Commands']"
 namespace Rover {
     const PCA9685_ADDRESS = 0x43;
@@ -247,7 +247,6 @@ namespace Rover {
     //% weight=200
     //% br.min=0 br.max=255
     //% br.defl=255
-    //% color=#FFA500
     //% group="LEDs"
     export function setBrightness(br: number): void {
         brightness = br;
@@ -260,10 +259,9 @@ namespace Rover {
      * export the leds index.
      * @param index the leds index.
      */
-    //% blockId="rover_led_index" block="%index"
+    //% blockId=rover_led_index block="%index"
     //% weight=185  
     //% advanced=true
-    //% color=#FF0000
     //% group="LEDs"    
     export function ledIndex(index: LEDIndex): number {
         return index;
@@ -275,7 +273,6 @@ namespace Rover {
      */
     //% blockId=rover_setRGBLED block="%index=rover_led_index show %ccolor=rover_colors"
     //% weight=195
-    //% color=#FFA500
     //% group="LEDs"
     export function setRGBLED(index: number, ccolor: number): void {
         index = Math.constrain(index, 0, 15);
@@ -299,18 +296,16 @@ namespace Rover {
     //% blockId=rover_setAllRGB block="All LED show %ccolor=rover_colors"
     //% weight=190
     //% group="LEDs"
-    //% color=#FFA500
     export function setALLRGB(ccolor: number): void {
         setRGBLED(LEDIndex.LED_All, ccolor);
     }
     /**
      * Gets the RGB value of a known color
     */
-    //% blockId="rover_colors" block="%color"
+    //% blockId=rover_colors block="%color"
     //% weight=185  
     //% advanced=true
     //% group="LEDs"
-    //% color=#FF0000
     export function colors(color: RoverColors): number {
         return color;
     }
@@ -321,7 +316,6 @@ namespace Rover {
     //% color.shadow="colorNumberPicker"
     //% weight=180    
     //% group="LEDs"
-    //% color=#FFA500
     export function showColor(color: number): number {
         return color;
     }
@@ -341,7 +335,6 @@ namespace Rover {
     //% blue.defl=128
     //% advanced=true
     //% group="LEDs"
-    //% color=#FFA500
     export function rgb(red: number, green: number, blue: number): number {
         return packRGB(red, green, blue);
     }
@@ -363,7 +356,6 @@ namespace Rover {
     //% s.defl=99
     //% l.defl=50
     //% group="LEDs"
-    //% color=#FFA500
     export function hsl(h: number, s: number, l: number): number {
         h = Math.round(h);
         s = Math.round(s);
@@ -410,7 +402,6 @@ namespace Rover {
     //% speed.defl=50
     //% advanced=true
     //% group="Motors"
-    //% color=#222222
     export function MotorRun(index: Motors, speed: number): void {
         speed = Math.map(speed, -255, 255, -4095, 4095);
         speed = Math.constrain(speed, -4095, 4095);
@@ -445,7 +436,6 @@ namespace Rover {
     //% speed1.defl=50
     //% speed2.defl=50
     //% group="Motors"
-    //% color=#222222
     export function MotorRunDual(speed1: number, speed2: number): void {
         MotorRun(Motors.M1, speed1);
         MotorRun(Motors.M2, speed2);
@@ -459,7 +449,6 @@ namespace Rover {
     //% speed.min=-255 speed.max=255
     //% speed.defl=50
     //% group="Motors"
-    //% color=#222222
     export function Move(speed: number): void {
         MotorRunDual(speed, speed);
     }
@@ -472,7 +461,6 @@ namespace Rover {
     //% weight=75
     //% advanced=true
     //% group="Motors"
-    //% color=#222222
     export function MotorStop(act: MotorActions, index: Motors): void {
         if (act == MotorActions.Stop) {
             MotorRun(index, 0);
@@ -488,7 +476,6 @@ namespace Rover {
     //% blockId=rover_stop_all block="%act=MotorActions all motors"
     //% weight=70
     //% group="Motors"
-    //% color=#222222
     export function MotorStopAll(act: MotorActions): void {
         if (act == MotorActions.Stop) {
             MotorRun(Motors.M1, 0);
@@ -505,7 +492,6 @@ namespace Rover {
     //% blockId=rover_ultrasonic block="distance"
     //% weight=65
     //% group="Sensors"
-    //% color=#FF00F0
     export function Ultrasonic(): number {
 
         //send trig pulse
@@ -532,7 +518,6 @@ namespace Rover {
     //% blockId=rover_line_tracking block="line-tracking value"
     //% weight=65
     //% group="Sensors"
-    //% color=#FF00F0
     export function LineTracking(): number {
         let val = pins.digitalReadPin(DigitalPin.P14) << 2 | pins.digitalReadPin(DigitalPin.P15) << 1 | pins.digitalReadPin(DigitalPin.P16) << 0;
         return val;
@@ -543,7 +528,6 @@ namespace Rover {
     //% blockId=rover_light_tracing block="light-tracing value"
     //% weight=65
     //% group="Sensors"
-    //% color=#FF00F0
     export function LightTracing(): number {
         let val = pins.analogReadPin(AnalogPin.P1)
         return val;
@@ -554,7 +538,6 @@ namespace Rover {
     //% blockId=rover_bettery_level block="battery voltage"
     //% weight=60
     //% group="Sensors"
-    //% color=#FF00F0
     export function BatteryLevel(): number {
         let p2_adc = pins.analogReadPin(AnalogPin.P2);
         let bat_valotage = Math.round(p2_adc * 6.4516);     //unit: mV ,6.4516 = ~ 2*3.3/1023
@@ -568,7 +551,6 @@ namespace Rover {
     //% weight=55
     //% advanced=true
     //% group="Commands"
-    //% color=#0000FF
     export function setReceiveString(receivedString: string): void {
         parameterList = []
         let interval = receivedString.indexOf("#")
@@ -587,7 +569,6 @@ namespace Rover {
     //% weight=53
     //% advanced=true
     //% group="Commands"
-    //% color=#0000FF
     export function getOrder(): string {
         return currentOrder
     }
@@ -599,7 +580,6 @@ namespace Rover {
     //% weight=53
     //% advanced=true
     //% group="Commands"
-    //% color=#0000FF
     export function checkOrder(_inOrder: Orders): boolean {
         if (currentOrder == ordersAyyay[_inOrder])
             return true
@@ -616,7 +596,6 @@ namespace Rover {
     //% index.defl=0
     //% advanced=true
     //% group="Commands"
-    //% color=#0000FF
     export function getParameter(index: number): number {
         return parseFloat(parameterList[index]);
     }
@@ -629,7 +608,6 @@ namespace Rover {
     //% weight=51
     //% advanced=true
     //% group="Commands"
-    //% color=#0000FF
     export function SendString(_inOrder: Orders, paramters: number): string {
         return ordersAyyay[_inOrder] + "#" + paramters + "#";
     }
@@ -641,7 +619,6 @@ namespace Rover {
     //% weight=51
     //% advanced=true
     //% group="Commands"
-    //% color=#0070FF
     export function setRoverMode(mode: number): void {
         realMode = mode;
     }
@@ -653,7 +630,6 @@ namespace Rover {
     //% weight=51
     //% advanced=true
     //% group="Commands"
-    //% color=#0070FF
     export function checkMode(isMode: RoverModes): boolean {
         if (realMode == isMode)
             return true;
@@ -668,7 +644,6 @@ namespace Rover {
     //% weight=50
     //% advanced=true
     //% group="Commands"
-    //% color=#0070FF
     export function order_export(_inOrder: Orders): string {
         return ordersAyyay[_inOrder];
     }
@@ -680,7 +655,6 @@ namespace Rover {
     //% weight=50
     //% advanced=true
     //% group="Commands"
-    //% color=#0070FF
     export function rover_mode_export(mode: RoverModes): number {
         return mode;
     }
@@ -691,7 +665,6 @@ namespace Rover {
     //% weight=50
     //% advanced=true
     //% group="Commands"
-    //% color=#0070FF
     export function parametersLength(): number {
         return parameterList.length;
     }
@@ -702,7 +675,6 @@ namespace Rover {
     //% weight=50
     //% advanced=true
     //% group="Commands"
-    //% color=#0070FF
     export function parametersList(): string[] {
         return parameterList;
     }
