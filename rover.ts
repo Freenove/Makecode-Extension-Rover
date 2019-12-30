@@ -604,7 +604,7 @@ namespace Rover {
      * @param _inOrder Commandes a envoyer.
      * @param paramters Parametres a tseter
      */
-    //% blockId=rover_ronan_test block="CMD<order> %_inOrder | CMD<Paramter>%paramters"
+    //% blockId=rover_ronan_test block="Ronan CMD<order> %_inOrder | CMD<Paramter>%paramters"
     //% weight=51
     //% advanced=true
     //% group="Commands"
