@@ -23,7 +23,7 @@
   "Orders.MODE|block": "小车模式",
   "Orders.MOVE|block": "移动",
   "Orders.NONE|block": "无",
-  "Orders.ORDER_RGB|block": "炫光灯",
+  "Orders.ORDER_RGB|block": "多彩灯",
   "Orders.STOP|block": "停止",
   "Orders.TRACKING|block": "巡线",
   "Orders.VOLTAGE|block": "电压",

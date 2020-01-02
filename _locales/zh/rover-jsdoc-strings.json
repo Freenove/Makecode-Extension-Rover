@@ -1,5 +1,5 @@
 {
-  "LEDIndex": "LEDIndex: 炫彩灯的组合序号",
+  "LEDIndex": "LEDIndex: 多彩灯的组合序号",
   "MotorActions": "MotorActions: 停止或刹车",
   "Orders": "Orders: 命令字",
   "Rover": "Rover: blocks",
