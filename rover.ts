@@ -30,53 +30,86 @@ enum RoverColors {
  * Orders: Command parameter
  */
 enum Orders {
+    //% block="MOVE"
     MOVE = 0,
+    //% block="STOP"
     STOP = 1,
+    //% block="RGB-LED"
     ORDER_RGB = 2,
+    //% block="BUZZER"
     BUZZER = 3,
+    //% block="DISTANCE"
     DISTANCE = 4,
+    //% block="LIGHTING"
     LIGHTING = 5,
+    //% block="TRACKING"
     TRACKING = 6,
+    //% block="MODE"
     MODE = 7,
+    //% block="VOLTAGE"
     VOLTAGE = 8,
+    //% block="ECHO-OK"
     ECHO_OK = 9,
+    //% block="NONE"
     NONE = 10
 }
 /**
  * LEDIndex: LED Index Combination Value
  */
 enum LEDIndex {
+    //% block="led 1"
     LED1 = 1,
+    //% block="led 2"
     LED2 = 2,
+    //% block="led 3"
     LED3 = 4,
+    //% block="led 4"
     LED4 = 8,
+    //% block="led 1, 2"
     LED1_2 = 3,
+    //% block="led 1, 3"
     LED1_3 = 5,
+    //% block="led 1, 4"
     LED1_4 = 9,
+    //% block="led 2, 3"
     LED2_3 = 6,
+    //% block="led 2, 4"
     LED2_4 = 10,
+    //% block="led 3, 4"
     LED3_4 = 12,
+    //% block="led 1, 2, 3"
     LED1_2_3 = 7,
+    //% block="led 1, 2, 4"
     LED1_2_4 = 11,
+    //% block="led 1, 3, 4"
     LED1_3_4 = 13,
+    //% block="led 2, 3, 4"
     LED2_3_4 = 14,
+    //% block="all led"
     LED_All = 15
 }
 /**
  * RoverModes: Rover's working mode
  */
 enum RoverModes {
+    //% block="None"
     Mode_None = 0,
+    //% block="Obstacle Avoidance"
     Mode_ObstacleAvoidance = 1,
+    //% block="Light Tracing"
     Mode_LightTracing = 2,
+    //% block="Line Tracking"
     Mode_LineTracking = 3,
+    //% block="Remote"
     Mode_Remote = 4
 }
 /**
  * MotorActions: Stop or Brake
  */
 enum MotorActions {
+    //% block="stop"
     Stop = 1,
+    //% block="brake"
     Brake = 2
 }
 /**
@@ -162,7 +195,9 @@ namespace Rover {
      * define the motor index.
      */
     export enum Motors {
+        //% block="M1(left)"
         M1 = 0x1,
+        //% block="M2(right)"
         M2 = 0x2
     }
 
