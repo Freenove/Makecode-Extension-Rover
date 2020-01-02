@@ -5,25 +5,25 @@
  * RoverColors: Some common colors
  */
 enum RoverColors {
-    //% block=red
+    //% block="red"
     Red = 0xFF0000,
-    //% block=orange
+    //% block="orange"
     Orange = 0xFFA500,
-    //% block=yellow
+    //% block="yellow"
     Yellow = 0xFFFF00,
-    //% block=green
+    //% block="green"
     Green = 0x00FF00,
-    //% block=blue
+    //% block="blue"
     Blue = 0x0000FF,
-    //% block=indigo
+    //% block="indigo"
     Indigo = 0x4b0082,
-    //% block=violet
+    //% block="violet"
     Violet = 0x8a2be2,
-    //% block=purple
+    //% block="purple"
     Purple = 0xFF00FF,
-    //% block=white
+    //% block="white"
     White = 0xFFFFFF,
-    //% block=black
+    //% block="black"
     Black = 0x000000
 }
 /**
