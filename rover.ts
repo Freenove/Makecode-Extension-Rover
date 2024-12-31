@@ -208,6 +208,7 @@ namespace Rover {
     let currentOrder = "K";
     let parameterList: string[] = []
     let realMode = 0;
+    let enableMotorReversed = false;
     /**
      * the function of i2c_write
      * @param addr the address of i2c device
@@ -438,6 +439,9 @@ namespace Rover {
     //% advanced=true
     //% group="Motors"
     export function MotorRun(index: Motors, speed: number): void {
+        if(enableMotorReversed){
+            speed = -speed;
+        }
         speed = Math.map(speed, -255, 255, -4095, 4095);
         speed = Math.constrain(speed, -4095, 4095);
         let pp = (index - 1) * 2;
@@ -486,6 +490,17 @@ namespace Rover {
     //% group="Motors"
     export function Move(speed: number): void {
         MotorRunDual(speed, speed);
+    }
+    /**
+     * Make the motor reversed.
+     * @param index true or false reversed.
+     */
+    //% blockId=rover_reverse_motor block="Set motor reversed |%index|"
+    //% weight=75
+    //% advanced=true
+    //% group="Motors"
+    export function ReverseMotor(index: boolean): void {
+        enableMotorReversed = index;
     }
     /**
      * Stop or Brake a motor.
@@ -538,6 +553,7 @@ namespace Rover {
         pins.digitalWritePin(TRIG_PIN, 0)
 
         // read echo pulse  max distance : 6m  
+        
         let t = pins.pulseIn(ECHO_PIN, PulseValue.High, 35000);
         let ret = t;
 
